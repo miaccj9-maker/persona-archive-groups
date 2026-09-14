@@ -1,0 +1,15 @@
+{
+  "display_name": "面具合并存档（按角色分组）",
+  "loading_order": 50,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "index.css",
+  "author": "Custom",
+  "version": "1.5.3",
+  "homePage": "",
+  "auto_update": true,
+  "hooks": {
+    "activate": "init"
+  }
+}
