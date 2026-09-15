@@ -34,7 +34,7 @@ function saveSettings() {
     try { getContext().saveSettingsDebounced(); } catch (e) { console.warn(e); }
 }
 
-function debounceRegroup(wait = 90) {
+function debounceRegroup(wait = 160) {
     if (debounceTimer) clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
         try { regroup(); } catch (e) { console.warn(`[${MODULE_NAME}] regroup 失败:`, e); }
@@ -694,11 +694,10 @@ export async function init() {
                 clearInterval(t);
                 start();
             }
-        }, 300);
+        }, 1000);
     }
 
     eventSource.on(event_types.PERSONA_CHANGED, () => debounceRegroup(150));
-    eventSource.on(event_types.CHAT_CHANGED, () => debounceRegroup(200));
 
     setTimeout(() => debounceRegroup(500), 800);
     setTimeout(() => debounceRegroup(500), 2000);
